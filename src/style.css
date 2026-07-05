@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-text-primary: rgb(248 250 252);
+  --color-text-secondary: rgb(203 213 225);
+  --color-text-muted: rgb(148 163 184);
+  --color-text-accent: rgb(103 232 249);
+  --color-text-accent-subtle: rgb(165 243 252);
+  --color-bg-app: rgb(2 6 23);
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.1);
+  --color-bg-elevated: rgb(15 23 42);
+  --color-bg-header: rgba(15, 23, 42, 0.75);
+  --color-bg-subtle: rgba(255, 255, 255, 0.1);
+  --color-bg-inverse: rgb(255 255 255);
+  --color-text-inverse: rgb(2 6 23);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(34, 211, 238, 0.4);
+  --color-accent-bg: rgba(34, 211, 238, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.12), transparent 20%),
+    var(--color-bg-app);
+  color: var(--color-text-primary);
+}
+
+body,
+#app {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+
+  --color-text-primary: rgb(15 23 42);
+  --color-text-secondary: rgb(71 85 105);
+  --color-text-muted: rgb(100 116 139);
+  --color-text-accent: rgb(8 145 178);
+  --color-text-accent-subtle: rgb(14 116 144);
+  --color-bg-app: rgb(245 245 244);
+  --color-bg-card: rgba(0, 0, 0, 0.03);
+  --color-bg-card-hover: rgba(0, 0, 0, 0.06);
+  --color-bg-elevated: rgb(255 255 255);
+  --color-bg-header: rgba(255, 255, 255, 0.75);
+  --color-bg-subtle: rgba(0, 0, 0, 0.06);
+  --color-bg-inverse: rgb(15 23 42);
+  --color-text-inverse: rgb(248 250 252);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(8, 145, 178, 0.4);
+  --color-accent-bg: rgba(8, 145, 178, 0.1);
+}
+
+body {
+  background-color: var(--color-bg-app);
+  color: var(--color-text-primary);
+}
+
+.light body,
+.light #app {
+  background:
+    radial-gradient(circle at top left, rgba(8, 145, 178, 0.08), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.08), transparent 18%),
+    var(--color-bg-app);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@layer utilities {
+  .bg-app {
+    background:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.1), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.1), transparent 26%),
+      var(--color-bg-app);
+  }
+
+  .light .bg-app {
+    background:
+      radial-gradient(circle at top left, rgba(8, 145, 178, 0.08), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.08), transparent 18%),
+      var(--color-bg-app);
+  }
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-accent {
+    color: var(--color-text-accent);
+  }
+  .bg-card {
+    background-color: var(--color-bg-card);
+  }
+  .bg-card-hover {
+    background-color: var(--color-bg-card-hover);
+  }
+  .bg-elevated {
+    background-color: var(--color-bg-elevated);
+  }
+  .bg-header {
+    background-color: var(--color-bg-header);
+  }
+  .bg-inverse {
+    background-color: var(--color-bg-inverse);
+  }
+  .text-inverse {
+    color: var(--color-text-inverse);
+  }
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+  .border-hover {
+    border-color: var(--color-border-hover);
+  }
+}
