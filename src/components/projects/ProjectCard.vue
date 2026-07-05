@@ -60,7 +60,7 @@ defineProps<{
       <div class="mt-auto flex flex-wrap items-center gap-3 pt-2">
         <RouterLink
           :to="`/projects/${project.slug}`"
-          class="inline-flex items-center gap-2 rounded-full bg-inverse px-4 py-2 text-sm font-medium text-inverse transition hover:bg-cyan-200"
+          class="inline-flex items-center gap-2 rounded-full bg-inverse px-4 py-2 text-sm font-medium text-inverse transition hover:brightness-110 active:brightness-90"
         >
           Lihat Detail
           <ArrowUpRight class="h-4 w-4" />

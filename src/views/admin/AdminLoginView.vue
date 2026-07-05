@@ -9,7 +9,7 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 useHead({
-  title: 'Login Admin - Saka Developer',
+  title: 'Login Admin - Muhamad Ikhsan Ramadhan',
 })
 
 const form = reactive({

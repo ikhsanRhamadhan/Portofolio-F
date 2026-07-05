@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
 import ProjectDetailView from '@/views/ProjectDetailView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import BlogView from '@/views/BlogView.vue'
@@ -15,6 +16,8 @@ import AdminEducationsView from '@/views/admin/AdminEducationsView.vue'
 import AdminCertificationsView from '@/views/admin/AdminCertificationsView.vue'
 import AdminBlogView from '@/views/admin/AdminBlogView.vue'
 import AdminMessagesView from '@/views/admin/AdminMessagesView.vue'
+import AdminProfileView from '@/views/admin/AdminProfileView.vue'
+import AdminHobbiesView from '@/views/admin/AdminHobbiesView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,6 +26,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView,
     },
     {
       path: '/projects',
@@ -99,6 +107,16 @@ const router = createRouter({
           path: 'messages',
           name: 'admin-messages',
           component: AdminMessagesView,
+        },
+        {
+          path: 'profile',
+          name: 'admin-profile',
+          component: AdminProfileView,
+        },
+        {
+          path: 'hobbies',
+          name: 'admin-hobbies',
+          component: AdminHobbiesView,
         },
       ],
     },

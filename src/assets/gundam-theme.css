@@ -1,0 +1,12 @@
+:root {
+  --gundam-bg: #050a0f;
+  --gundam-foreground: #c8e6f0;
+  --gundam-card: #0a1520;
+  --gundam-primary: #00d4ff;
+  --gundam-accent: #ff6b00;
+  --gundam-success: #00ff88;
+  --gundam-danger: #ff2244;
+  --gundam-zeon: #9b4dff;
+  --gundam-muted: #5a8099;
+  --gundam-border: rgba(0, 212, 255, 0.15);
+}

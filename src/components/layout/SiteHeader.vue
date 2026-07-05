@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { MoonStar, SunMedium, Menu, X, FileText } from 'lucide-vue-next'
+import { MoonStar, SunMedium, Menu, X, Cpu } from 'lucide-vue-next'
 import { useRoute } from 'vue-router'
 import { useTheme } from '@/composables/useTheme'
 
@@ -11,6 +11,7 @@ const isMobileOpen = ref(false)
 
 const links = [
   { label: 'Beranda', to: '/' },
+  { label: 'About', to: '/about' },
   { label: 'Projects', to: '/projects' },
   { label: 'Blog', to: '/blog' },
 ]
@@ -30,15 +31,15 @@ const closeMobile = () => {
         class="flex items-center gap-3"
         @click="closeMobile"
       >
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-accent">
-          SD
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-accent/50 bg-accent/10 text-sm font-bold text-accent">
+          <Cpu class="h-5 w-5" />
         </span>
         <div>
           <p class="font-display text-lg tracking-wide text-primary">
-            Saka Developer
+            Saka<span class="text-gundam-red">.</span>Dev
           </p>
-          <p class="text-xs uppercase tracking-[0.35em] text-muted">
-            Full Stack Portfolio
+          <p class="text-[10px] uppercase tracking-[0.35em] text-muted font-tech">
+            Mobile Suit Developer
           </p>
         </div>
       </RouterLink>
@@ -50,8 +51,8 @@ const closeMobile = () => {
             v-for="link in links"
             :key="link.to"
             :to="link.to"
-            class="rounded-full px-4 py-2 text-sm transition"
-            :class="isActive(link.to) ? 'bg-inverse text-inverse' : 'text-secondary hover:bg-card-hover hover:text-primary'"
+            class="rounded-full px-4 py-2 text-sm transition font-tech"
+            :class="isActive(link.to) ? 'bg-accent text-white' : 'text-secondary hover:bg-card-hover hover:text-primary'"
           >
             {{ link.label }}
           </RouterLink>
@@ -100,7 +101,7 @@ const closeMobile = () => {
           v-for="link in links"
           :key="link.to"
           :to="link.to"
-          class="rounded-xl px-4 py-3 text-sm transition"
+          class="rounded-xl px-4 py-3 text-sm transition font-tech"
           :class="isActive(link.to) ? 'bg-accent-bg text-accent' : 'text-secondary hover:bg-card-hover hover:text-primary'"
           @click="closeMobile"
         >

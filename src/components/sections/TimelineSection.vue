@@ -18,11 +18,16 @@ const formatDate = (dateStr: string | null) => {
 <template>
   <section class="container px-6 pt-20">
     <div class="mb-10">
-      <p class="text-sm uppercase tracking-[0.35em] text-accent">
-        Pengalaman
-      </p>
+      <div class="flex items-center gap-3 mb-2">
+        <svg width="24" height="12" viewBox="0 0 40 18" class="opacity-60">
+          <polygon points="20,2 8,16 14,16 20,8 26,16 32,16" fill="var(--color-gundam-yellow)" />
+        </svg>
+        <p class="text-sm uppercase tracking-[0.35em] text-accent font-display">
+          Battle Record
+        </p>
+      </div>
       <h2 class="mt-3 font-display text-4xl text-primary">
-        Perjalanan Karir & Pendidikan
+        Deployment History
       </h2>
     </div>
 
@@ -31,7 +36,7 @@ const formatDate = (dateStr: string | null) => {
         <div class="mb-6 flex items-center gap-3">
           <BriefcaseBusiness class="h-5 w-5 text-accent" />
           <h3 class="font-display text-xl text-primary">
-            Pengalaman Kerja
+            Combat Missions
           </h3>
         </div>
 
@@ -43,31 +48,31 @@ const formatDate = (dateStr: string | null) => {
         </div>
 
         <div
-          v-for="(exp, idx) in experiences"
+          v-for="exp in experiences"
           v-else
           :key="exp.id"
           class="relative border-l-2 border-accent/30 pl-6 pb-8 last:pb-0"
         >
           <div class="absolute left-[-6.5px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-elevated" />
-          <div class="rounded-[20px] border border-subtle bg-card p-5">
+          <div class="relative overflow-hidden rounded-[20px] border border-subtle bg-card p-5 panel-line">
             <div class="mb-1 flex items-center gap-2">
               <span
                 v-if="exp.is_current"
-                class="rounded-full bg-emerald-400/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] text-emerald-300"
+                class="rounded-full bg-emerald-400/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-300 font-display"
               >
-                Aktif
+                Active
               </span>
             </div>
-            <h4 class="text-lg font-medium text-primary">
+            <h4 class="text-lg font-medium text-primary font-tech">
               {{ exp.position }}
             </h4>
-            <p class="text-sm text-accent">
+            <p class="text-sm text-accent font-tech">
               {{ exp.company }}
             </p>
-            <p class="mt-1 text-xs text-muted">
+            <p class="mt-1 text-xs text-muted font-tech">
               {{ formatDate(exp.start_date) }} — {{ formatDate(exp.end_date) }}
             </p>
-            <p class="mt-3 text-sm leading-7 text-secondary">
+            <p class="mt-3 text-sm leading-7 text-secondary font-tech">
               {{ exp.description }}
             </p>
           </div>
@@ -78,7 +83,7 @@ const formatDate = (dateStr: string | null) => {
         <div class="mb-6 flex items-center gap-3">
           <GraduationCap class="h-5 w-5 text-accent" />
           <h3 class="font-display text-xl text-primary">
-            Pendidikan
+            Training Academy
           </h3>
         </div>
 
@@ -96,17 +101,17 @@ const formatDate = (dateStr: string | null) => {
           class="relative border-l-2 border-accent/30 pl-6 pb-8 last:pb-0"
         >
           <div class="absolute left-[-6.5px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-elevated" />
-          <div class="rounded-[20px] border border-subtle bg-card p-5">
-            <h4 class="text-lg font-medium text-primary">
+          <div class="relative overflow-hidden rounded-[20px] border border-subtle bg-card p-5 panel-line">
+            <h4 class="text-lg font-medium text-primary font-tech">
               {{ edu.degree }}
             </h4>
-            <p class="text-sm text-accent">
+            <p class="text-sm text-accent font-tech">
               {{ edu.institution }}
             </p>
-            <p class="mt-1 text-xs text-muted">
+            <p class="mt-1 text-xs text-muted font-tech">
               {{ edu.field_of_study }}
             </p>
-            <p class="mt-1 text-xs text-muted">
+            <p class="mt-1 text-xs text-muted font-tech">
               {{ formatDate(edu.start_date) }} — {{ formatDate(edu.end_date) }}
             </p>
           </div>

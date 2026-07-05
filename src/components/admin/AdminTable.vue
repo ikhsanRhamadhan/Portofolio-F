@@ -26,7 +26,7 @@ const emit = defineEmits<{
       </div>
       <button
         type="button"
-        class="inline-flex items-center gap-2 rounded-full bg-inverse px-5 py-2.5 text-sm font-medium text-inverse transition hover:bg-cyan-200"
+        class="inline-flex items-center gap-2 rounded-full bg-inverse px-5 py-2.5 text-sm font-medium text-inverse transition hover:brightness-110 active:brightness-90"
         @click="emit('create')"
       >
         <Plus class="h-4 w-4" />

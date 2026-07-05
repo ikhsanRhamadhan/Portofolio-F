@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import SiteHeader from '@/components/layout/SiteHeader.vue'
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-vue-next'
+import { Github, Linkedin, Mail, ExternalLink, Cpu } from 'lucide-vue-next'
 </script>
 
 <template>
   <div class="min-h-screen bg-app text-primary">
-    <div class="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.12),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(251,191,36,0.12),_transparent_28%)]" />
     <div class="relative">
       <SiteHeader />
       <router-view v-slot="{ Component }">
@@ -19,13 +18,13 @@ import { Github, Linkedin, Mail, ExternalLink } from 'lucide-vue-next'
       <footer class="container px-6 pb-10 pt-16 text-sm text-muted">
         <div class="flex flex-col gap-6 border-t border-subtle pt-6 md:flex-row md:items-center md:justify-between">
           <div class="flex flex-col gap-2">
-            <p>&copy; 2026 Saka Developer. Built with Laravel API and Vue SPA.</p>
+            <p class="font-tech">&copy; 2026 Muhamad Ikhsan Ramadhan. RX-78-2 class Software Engineer.</p>
             <div class="flex items-center gap-3">
               <a
                 href="https://github.com/sakadev"
                 target="_blank"
                 rel="noreferrer"
-                class="flex items-center gap-1.5 text-muted transition hover:text-accent"
+                class="flex items-center gap-1.5 text-muted transition hover:text-accent font-tech"
               >
                 <Github class="h-4 w-4" />
                 GitHub
@@ -34,14 +33,14 @@ import { Github, Linkedin, Mail, ExternalLink } from 'lucide-vue-next'
                 href="https://linkedin.com/in/sakadev"
                 target="_blank"
                 rel="noreferrer"
-                class="flex items-center gap-1.5 text-muted transition hover:text-accent"
+                class="flex items-center gap-1.5 text-muted transition hover:text-accent font-tech"
               >
                 <Linkedin class="h-4 w-4" />
                 LinkedIn
               </a>
               <a
                 href="mailto:saka@example.com"
-                class="flex items-center gap-1.5 text-muted transition hover:text-accent"
+                class="flex items-center gap-1.5 text-muted transition hover:text-accent font-tech"
               >
                 <Mail class="h-4 w-4" />
                 Email
@@ -51,16 +50,16 @@ import { Github, Linkedin, Mail, ExternalLink } from 'lucide-vue-next'
           <div class="flex items-center gap-4">
             <RouterLink
               to="/blog"
-              class="transition hover:text-accent"
+              class="transition hover:text-accent font-tech"
             >
-              Blog
+              Field Logs
             </RouterLink>
             <RouterLink
               to="/admin/login"
-              class="flex items-center gap-1 text-xs text-muted transition hover:text-accent"
+              class="flex items-center gap-1 text-xs text-muted transition hover:text-accent font-tech"
             >
-              Admin
-              <ExternalLink class="h-3 w-3" />
+              <Cpu class="h-3 w-3" />
+              Command Center
             </RouterLink>
           </div>
         </div>

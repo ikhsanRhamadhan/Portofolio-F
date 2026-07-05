@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { onMounted } from 'vue'
 import { useSkillsStore } from '@/stores/skills'
 
@@ -15,17 +16,26 @@ const skillCategories = computed(() => {
   return map
 })
 
-import { computed } from 'vue'
+onMounted(() => {
+  if (!skillsStore.skills.length) {
+    skillsStore.fetchSkills()
+  }
+})
 </script>
 
 <template>
   <section class="container px-6 pt-20">
     <div class="mb-10">
-      <p class="text-sm uppercase tracking-[0.35em] text-accent">
-        Keahlian
-      </p>
+      <div class="flex items-center gap-3 mb-2">
+        <svg width="24" height="12" viewBox="0 0 40 18" class="opacity-60">
+          <polygon points="20,2 8,16 14,16 20,8 26,16 32,16" fill="var(--color-gundam-yellow)" />
+        </svg>
+        <p class="text-sm uppercase tracking-[0.35em] text-accent font-display">
+          Weapon Systems
+        </p>
+      </div>
       <h2 class="mt-3 font-display text-4xl text-primary">
-        Tech Stack & Kemampuan
+        Tech Arsenal
       </h2>
     </div>
 
@@ -43,8 +53,11 @@ import { computed } from 'vue'
       <div
         v-for="[category, items] in skillCategories"
         :key="category"
-        class="rounded-[24px] border border-subtle bg-card p-6"
+        class="relative overflow-hidden rounded-[24px] border border-subtle bg-card p-6 panel-line"
       >
+        <div class="corner-bracket corner-tl" style="width:14px;height:14px;" />
+        <div class="corner-bracket corner-br" style="width:14px;height:14px;" />
+        <div class="absolute top-0 right-0 h-10 w-10 caution-stripe opacity-40" />
         <h3 class="font-display text-lg text-primary">
           {{ category }}
         </h3>
@@ -54,12 +67,13 @@ import { computed } from 'vue'
             :key="skill.id"
           >
             <div class="mb-1 flex items-center justify-between">
-              <span class="text-sm text-secondary">{{ skill.name }}</span>
-              <span class="text-xs text-muted">{{ skill.level }}%</span>
+              <span class="text-sm text-secondary font-tech">{{ skill.name }}</span>
+              <span class="text-xs text-muted font-tech">{{ skill.level }}%</span>
             </div>
             <div class="h-2 overflow-hidden rounded-full bg-card-hover">
               <div
-                class="h-full rounded-full bg-accent transition-all duration-700"
+                class="beam-saber h-full rounded-full transition-all duration-700"
+                :class="skill.level >= 80 ? 'bg-accent' : skill.level >= 50 ? 'bg-gundam-yellow' : 'bg-gundam-red'"
                 :style="{ width: `${skill.level}%` }"
               />
             </div>

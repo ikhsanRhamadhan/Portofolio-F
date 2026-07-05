@@ -12,6 +12,8 @@ import {
   Award,
   FileText,
   MessageSquare,
+  User,
+  HeartHandshake,
   LogOut,
   Menu,
   X,
@@ -24,7 +26,7 @@ const route = useRoute()
 const isSidebarOpen = ref(false)
 
 useHead({
-  title: 'Admin Panel - Saka Developer',
+  title: 'Admin Panel - Muhamad Ikhsan Ramadhan',
 })
 
 const sidebarLinks = [
@@ -36,6 +38,8 @@ const sidebarLinks = [
   { label: 'Certifications', to: '/admin/certifications', icon: Award },
   { label: 'Blog', to: '/admin/blog', icon: FileText },
   { label: 'Messages', to: '/admin/messages', icon: MessageSquare },
+  { label: 'Pilot Profile', to: '/admin/profile', icon: User },
+  { label: 'Hobbies', to: '/admin/hobbies', icon: HeartHandshake },
 ]
 
 const handleLogout = async () => {

@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createHead } from '@unhead/vue'
 import './style.css'
+import './assets/gundam-theme.css'
 import App from './App.vue'
 import router from './router'
 

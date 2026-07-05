@@ -7,7 +7,7 @@ import { useBlogStore } from '@/stores/blog'
 const blogStore = useBlogStore()
 
 useHead({
-  title: 'Blog - Saka Developer',
+  title: 'Blog - Muhamad Ikhsan Ramadhan',
   meta: [
     { name: 'description', content: 'Blog tentang pengembangan web, Laravel, Vue, dan teknologi terkini.' },
   ],
